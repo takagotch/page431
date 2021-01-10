@@ -1,0 +1,263 @@
+
+/** full reset */
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  transition:
+    border-color 200ms ease-out,
+    background-color 200ms ease-out,
+    box-shadow 200ms ease-out,
+    transform 200ms ease-out,
+    opacity 200ms ease-out;
+}
+
+/** input placeholders */
+
+::-webkit-input-placeholder { opacity: .5; }
+::-moz-placeholder { opacity: .5; }
+:-ms-input-placeholder { opacity: .5; }
+:-moz-placeholder { opacity: .5; }
+
+/** document */
+
+html, body {
+  display: block;
+  position: relative;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+body {
+  font-family: 'Varela Round', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.5em;
+  background-color: #fbfbfb;
+  color: #444;
+}
+
+/** controls */
+
+button, input, select, options, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+button, select {
+  cursor: pointer;
+}
+
+/** links */
+
+a {
+  text-decoration: none;
+  color: #385185;
+}
+a:active {
+  opacity: .8;
+}
+
+/** Effects */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slideLeft {
+    0% { transform: translateX( 100px ); opacity: 0; }
+  100% { transform: translateX( 0 ); opacity: 1; }
+}
+@keyframes slideRight {
+    0% { transform: translateX( -100px ); opacity: 0; }
+  100% { transform: translateX( 0 ); opacity: 1; }
+}
+.hidden {
+  display: none;
+}
+.fade-in {
+  animation: fadeIn 600ms linear forwards;
+}
+.slide-left {
+  animation: slideLeft 200ms ease-out forwards;
+}
+.slide-right {
+  animation: slideRight 200ms ease-out forwards;
+}
+
+/** login wrapper */
+
+.google-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/** form centered container */
+
+.google-container {
+  display: block;
+  width: 100%;
+  min-width: 320px;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+/** form element container */
+
+.google-form {
+  display: block;
+  overflow: hidden;
+  border: 1px solid Gainsboro;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba( 0, 0, 0, .1 );
+  margin: 0 0 2em 0;
+  padding: 3em;
+}
+
+/** form input links */
+
+.google-form a {
+  font-weight: bold;
+  text-decoration: none;
+  color: DodgerBlue;
+}
+.google-form a:hover {
+  color: RoyalBlue;
+}
+
+/** form top heading text */
+
+.google-heading {
+  text-align: center;
+}
+.google-form h1 {
+  font-size: 160%;
+  margin: 0 0 15px 0;
+}
+
+/** form rows spacing */
+
+.google-form > div + div {
+  padding: 3em 0 0 0;
+}
+
+/** form logo */
+
+.google-logo > img {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+/** form welcome username box */
+
+.google-welcome {
+  text-align: center;
+}
+.google-welcome > div {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: auto;
+  margin: 1em auto 0 auto;
+  padding: .4em .8em;
+  line-height: 1em;
+  border: 1px solid Gainsboro;
+  border-radius: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.google-welcome > div > span {
+  margin: 0 .3em;
+}
+
+/** form text inputs */
+
+.google-input {
+  position: relative;
+}
+.google-input > input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid Gainsboro;
+  border-radius: 4px;
+  padding: 0 calc( 1em + 5px );
+  line-height: 3.6em;
+  margin: 0 0 1em 0;
+}
+.google-input > input:hover,
+.google-input > input:focus,
+.google-input > input:active {
+  border-color: DodgerBlue;
+  box-shadow: 0 0 0 1px DodgerBlue;
+}
+
+/** form input placeholder move effect */
+
+.google-input > span {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: white;
+  transform-origin: left center;
+  border-radius: 8px;
+  left: 1em;
+  top: 4.2em;
+  padding: 0 5px;
+  color: gray;
+}
+.google-input > input:focus + span,
+.google-input > input.filled + span {
+  transform: translateY( -2em ) scale( .8 );
+  color: DodgerBlue;
+}
+
+.google-action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.google-action > button {
+  display: inline-block;
+  text-align: center;
+  background-color: DodgerBlue;
+  padding: 0 2em;
+  line-height: 3em;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+/** form footer links */
+
+.google-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 90%;
+}
+.google-footer-left {
+  flex: 1;
+}
+.google-footer-right > a {
+  margin-left: 1em;
+  color: grey;
+}
+
